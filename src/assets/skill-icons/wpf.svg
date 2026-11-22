@@ -1,0 +1,10 @@
+<svg width="59" height="100" viewBox="0 0 59 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">WPF</title>
+  <rect x="4" y="28" width="51" height="43" rx="6" stroke="white" stroke-width="3"/>
+  <path d="M5.5 40H53.5" stroke="white" stroke-width="3"/>
+  <circle cx="12" cy="34" r="2" fill="white"/>
+  <circle cx="19" cy="34" r="2" fill="white"/>
+  <circle cx="26" cy="34" r="2" fill="white"/>
+  <text x="29.5" y="60" fill="white" font-family="Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">WPF</text>
+  <text x="29.5" y="95" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">WPF</text>
+</svg>

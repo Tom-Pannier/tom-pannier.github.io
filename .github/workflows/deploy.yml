@@ -21,21 +21,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      # Angular Portfolio auschecken
+      - name: Checkout Portfolio
         uses: actions/checkout@v4
 
+      # El Pollo Loco separat auschecken
+      - name: Checkout El Pollo Loco
+        uses: actions/checkout@v4
+        with:
+          repository: Tom-Pannier/EL-Pollo-Loco
+          ref: main
+          path: el-pollo-loco
+
+      # Node.js einrichten
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
 
+      # Abhängigkeiten installieren
       - name: Install dependencies
         run: npm ci
 
+      # Angular bauen
       - name: Build Angular
         run: npm run build -- --base-href /
 
+      # Spiel in den Angular-Build kopieren
+      - name: Copy El Pollo Loco
+        run: |
+          mkdir -p dist/portfolio/el-pollo-loco
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            el-pollo-loco/ \
+            dist/portfolio/el-pollo-loco/
+
+      # Fertigen Build hochladen
       - name: Upload build
         uses: actions/upload-pages-artifact@v3
         with:

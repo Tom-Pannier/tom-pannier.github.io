@@ -15,6 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { DataProtectionComponent } from './data-protection/data-protection.component';
+import { JumpRunComponent } from './pages/jump-run/jump-run.component';
+import { HomeComponent } from './pages/home-component/home-component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { DataProtectionComponent } from './data-protection/data-protection.compo
     ContactMobileComponent,
     FooterComponent,
     ImprintComponent,
-    DataProtectionComponent
+    DataProtectionComponent,
+    // JumpRunComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

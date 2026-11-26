@@ -33,6 +33,14 @@ jobs:
           ref: main
           path: el-pollo-loco
 
+      # Join separat auschecken
+      - name: Checkout Join
+        uses: actions/checkout@v4
+        with:
+          repository: Tom-Pannier/Join-Webapplikation-Kanban-Like
+          ref: main
+          path: join
+
       # Node.js einrichten
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -57,6 +65,16 @@ jobs:
             --exclude='.github/' \
             el-pollo-loco/ \
             dist/portfolio/project/el-pollo-loco/
+
+      # Spiel in den Angular-Build kopieren
+      - name: Copy Join
+        run: |
+          mkdir -p dist/portfolio/project/join
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            join/ \
+            dist/portfolio/project/join/
 
       - name: Create 404 fallback
         run: cp dist/portfolio/index.html dist/portfolio/404.html

@@ -51,7 +51,7 @@ jobs:
       # Spiel in den Angular-Build kopieren
       - name: Copy El Pollo Loco
         run: |
-          mkdir -p dist/portfolio/el-pollo-loco
+          mkdir -p dist/portfolio/project/el-pollo-loco
           rsync -a \
             --exclude='.git/' \
             --exclude='.github/' \

@@ -58,6 +58,9 @@ jobs:
             el-pollo-loco/ \
             dist/portfolio/el-pollo-loco/
 
+      - name: Create 404 fallback
+        run: cp dist/portfolio/index.html dist/portfolio/404.html
+        
       # Fertigen Build hochladen
       - name: Upload build
         uses: actions/upload-pages-artifact@v3
